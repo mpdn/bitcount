@@ -1,5 +1,5 @@
 #include "bitcount.h"
-#include "stdint.h"
+#include <stdint.h>
 
 /*
  All general implementations are heavily based on the following webpage:
