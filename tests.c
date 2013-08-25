@@ -13,7 +13,6 @@
 
 int main(int argc, char **argv)
 {
-	unsigned int i;
 	int status = 0;
 	
 	TEST(ctz, 2, 1);
@@ -32,6 +31,5 @@ int main(int argc, char **argv)
 	TEST(popcount, 3, 2);
 	TEST(popcount, UINT_MAX, BITCOUNT_BITS);
 	TEST(popcount, 0, 0);
-	
 	return status;
 }

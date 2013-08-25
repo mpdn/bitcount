@@ -1,4 +1,9 @@
 #include "bitcount.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 
 /*
@@ -11,8 +16,6 @@ unsigned int bit_clz_general(unsigned int v)
 	if (BITCOUNT_BITS == 32)
 	{
 		//see http://graphics.stanford.edu/~seander/bithacks.html#IntegerLogDeBruijn
-		
-		int r;      // result goes here
 
 		static const int MultiplyDeBruijnBitPosition[32] = 
 		{
@@ -46,7 +49,7 @@ unsigned int bit_ctz_general(unsigned int v)
 		0, 1, 28, 2, 29, 14, 24, 3, 30, 22, 20, 15, 25, 17, 4, 8, 
 		31, 27, 13, 23, 21, 19, 16, 7, 26, 12, 18, 6, 11, 5, 10, 9
 	};
-	return MultiplyDeBruijnBitPosition[((uint32_t)((v & -v) * 0x077CB531U)) >> 27];
+	return MultiplyDeBruijnBitPosition[((uint32_t)((v & -(int)v) * 0x077CB531U)) >> 27];
 }
 
 unsigned int bit_popcount_general(unsigned int v)
@@ -69,3 +72,7 @@ unsigned int bit_popcount_general(unsigned int v)
 		return c;
 	}
 }
+
+#ifdef __cplusplus
+}
+#endif

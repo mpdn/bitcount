@@ -3,7 +3,7 @@ bitcount
 
 Fast cross-platform bit counting using intrinsic functions.
 
-Bitcount is a cross-platform implementation of GCC's intrinsic `__builtin_clz`,`__builtin_ctz`, and `__builtin_popcount`. Currently only intrinsic functions are used in VS 2012 (currently untested), and GCC-compatible compilers (including Clang). If Bitcount is used on a system that isn't either of these, it uses a C implementation of these functions as a fallback.
+Bitcount is a cross-platform implementation of GCC's intrinsic `__builtin_clz`,`__builtin_ctz`, and `__builtin_popcount`. Currently only intrinsic functions are used in VS 2012 (possibly older VS versions as well), and GCC-compatible compilers (including Clang). If Bitcount is used on a system that isn't either of these, it uses a C implementation of these functions as a fallback.
 
 The library exposes three functions which follows the same API as the corresponing GCC intrinsics (which can be found [here][1]). Note that calls to clz and ctz with the value 0 are undefined.
 ```c
